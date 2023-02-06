@@ -1,12 +1,12 @@
 package application;
 
-import boardgame.Position;
+import checkers.CheckersMatch;
 
 public class Main {
 
 	public static void main(String[] args) {
-		Position p = new Position(1,2);
-		System.out.println(p);
+		CheckersMatch match = new CheckersMatch();
+		UserInterface.printBoard(match.getPieces());
 	}
 
 }
