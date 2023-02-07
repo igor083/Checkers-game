@@ -29,8 +29,7 @@ public class CheckersMatch {
 	private void initialSetup() {
 		board.placePiece(new BasePiece(board, Color.BLACK), new Position(5, 2));
 		board.placePiece(new BasePiece(board, Color.BLACK), new Position(5, 1));
-		board.placePiece(new BasePiece(board, Color.BLACK), new Position(5, 3));
-
+		
 	}
 
 }
