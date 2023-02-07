@@ -26,9 +26,13 @@ public class CheckersMatch {
 		return mat;
 	}
 
+	private void placeNewPiece(char column, int row ,CheckersPiece cp) {
+		board.placePiece(cp, new CheckersPosition(column, row).toPosition());
+	}
+	
 	private void initialSetup() {
-		board.placePiece(new BasePiece(board, Color.BLACK), new Position(5, 2));
-		board.placePiece(new BasePiece(board, Color.BLACK), new Position(5, 1));
+		placeNewPiece('a',2,new BasePiece(board, Color.BLACK));
+		placeNewPiece('a',3,new BasePiece(board, Color.BLACK));
 		
 	}
 
