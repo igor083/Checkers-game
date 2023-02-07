@@ -6,14 +6,13 @@ public class UserInterface {
 	public static void printBoard(CheckersPiece[][] pieces) {
 		
 		for(int i=0;i<pieces.length;i++) {
-			System.out.print((8-i)+ " ");
+			System.out.print((i)+ " ");
 			for(int j = 0; j<pieces.length;j++) {
 				printPiece(pieces[i][j]);
 			}
 			System.out.println();
 		}
-		System.out.println("   a  "+" b  "+" c  "+
-		" d  "+" e  "+" f  "+" g  "+" h  ");
+		System.out.println("   a  b  c  d  e  f  g  h ");
 		
 	}
 	
