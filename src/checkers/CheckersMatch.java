@@ -1,6 +1,8 @@
 package checkers;
 
 import boardgame.Board;
+import boardgame.Position;
+import checkersPieces.BasePiece;
 
 public class CheckersMatch {
 
@@ -8,7 +10,7 @@ public class CheckersMatch {
 
 	public CheckersMatch() {
 		board = new Board(8, 8);// declara o tamanho do tabuleiro do jogo
-
+		initialSetup();
 	}
 
 	public CheckersPiece[][] getPieces() {// matriz das pecas do jogo com relacao a partida
@@ -22,5 +24,11 @@ public class CheckersMatch {
 		}
 		return mat;
 	}
+	
+	private void initialSetup() {
+		board.placePiece(new BasePiece(board, Color.BLACK),new Position(2,1));
+	
+	}
+	
 
 }
