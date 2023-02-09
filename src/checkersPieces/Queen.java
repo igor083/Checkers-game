@@ -4,9 +4,8 @@ import boardgame.Board;
 import checkers.CheckersPiece;
 import checkers.Color;
 
-public class BasePiece extends CheckersPiece {
-
-	public BasePiece(Board board, Color color) {
+public class Queen extends CheckersPiece{
+	public Queen(Board board, Color color) {
 		super(board, color);
 	}
 	
@@ -21,7 +20,4 @@ public class BasePiece extends CheckersPiece {
 		
 		return mat;
 	}
-	
-	
-	
 }

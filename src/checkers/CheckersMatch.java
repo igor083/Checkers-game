@@ -43,6 +43,9 @@ public class CheckersMatch {
 		if(!board.thereIsAPiece(source)) {
 			throw new CheckersException("Nao existe peca na posicao de origem!");
 		}
+		if(!board.piece(source).isThereAnyPossibleMove()) {
+			throw new CheckersException("Nenhum movimento possivel para esta peca");
+		}
 	}
 	
 	private Piece makeMove(Position source,Position target) {
