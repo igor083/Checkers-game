@@ -9,7 +9,7 @@ public class CheckersPosition {
 
 	public CheckersPosition(char column, int row) {
 
-		if (column < 'a' || column > 'h' || row < 0 || row > 7) {
+		if (column < 'a' || column > 'h' || row < 0 || row > 8) {
 			throw new CheckersException("Valor de posicao invalido, valores c]validos vao de a0 ate h7!");
 		}
 		this.column = column;

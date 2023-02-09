@@ -1,7 +1,6 @@
 package checkers;
 
 import boardgame.Board;
-import boardgame.Position;
 import checkersPieces.BasePiece;
 
 public class CheckersMatch {
@@ -31,8 +30,31 @@ public class CheckersMatch {
 	}
 	
 	private void initialSetup() {
-		placeNewPiece('a',2,new BasePiece(board, Color.BLACK));
-		placeNewPiece('a',3,new BasePiece(board, Color.BLACK));
+		placeNewPiece('a',6,new BasePiece(board, Color.BLACK));
+		placeNewPiece('a',8,new BasePiece(board, Color.BLACK));
+		placeNewPiece('b',7,new BasePiece(board, Color.BLACK));
+		placeNewPiece('c',6,new BasePiece(board, Color.BLACK));
+		placeNewPiece('c',8,new BasePiece(board, Color.BLACK));
+		placeNewPiece('d',7,new BasePiece(board, Color.BLACK));
+		placeNewPiece('e',6,new BasePiece(board, Color.BLACK));
+		placeNewPiece('e',8,new BasePiece(board, Color.BLACK));
+		placeNewPiece('f',7,new BasePiece(board, Color.BLACK));
+		placeNewPiece('g',6,new BasePiece(board, Color.BLACK));
+		placeNewPiece('g',8,new BasePiece(board, Color.BLACK));
+		placeNewPiece('h',7,new BasePiece(board, Color.BLACK));
+
+		placeNewPiece('a',3,new BasePiece(board, Color.WHITE));
+		placeNewPiece('a',1,new BasePiece(board, Color.WHITE));
+		placeNewPiece('b',2,new BasePiece(board, Color.WHITE));
+		placeNewPiece('c',3,new BasePiece(board, Color.WHITE));
+		placeNewPiece('c',1,new BasePiece(board, Color.WHITE));
+		placeNewPiece('d',2,new BasePiece(board, Color.WHITE));
+		placeNewPiece('e',3,new BasePiece(board, Color.WHITE));
+		placeNewPiece('e',1,new BasePiece(board, Color.WHITE));
+		placeNewPiece('f',2,new BasePiece(board, Color.WHITE));
+		placeNewPiece('g',3,new BasePiece(board, Color.WHITE));
+		placeNewPiece('g',1,new BasePiece(board, Color.WHITE));
+		placeNewPiece('h',2,new BasePiece(board, Color.WHITE));
 		
 	}
 

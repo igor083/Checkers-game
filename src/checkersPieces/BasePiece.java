@@ -12,7 +12,7 @@ public class BasePiece extends CheckersPiece {
 	
 	@Override
 	public String toString() {
-		return " O";
+		return " O ";
 	}
 	
 	

@@ -39,15 +39,13 @@ public class Board {
 		return pieces[position.getRow()][position.getColumn()];
 	}
 
+	
 	public void placePiece(Piece piece, Position position) {
 		if (thereIsAPiece(position)) {
-
-			throw new BoardException("Essa posicao ja esta ocupada!");
-
+			throw new BoardException("Essa posicao ja esta ocupada: " + position);
 		}
 		pieces[position.getRow()][position.getColumn()] = piece;
 		piece.position = position;
-
 	}
 
 	private boolean positionExists(int row, int column) {
@@ -58,12 +56,11 @@ public class Board {
 		return positionExists(position.getRow(), position.getColumn());
 	}
 
+	
 	public boolean thereIsAPiece(Position position) {
 		if (!positionExists(position)) {
-
 			throw new BoardException("Essa posicao nao existe no tabuleiro!");
 		}
 		return piece(position) != null;
 	}
-
 }
