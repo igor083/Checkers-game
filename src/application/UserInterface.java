@@ -1,6 +1,10 @@
 package application;
 
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 import checkers.CheckersPiece;
+import checkers.CheckersPosition;
 import checkers.Color;
 
 public class UserInterface {
@@ -25,6 +29,17 @@ public class UserInterface {
 	public static final String ANSI_CYAN_BACKGROUND = "\u001B[46m";
 	public static final String ANSI_WHITE_BACKGROUND = "\u001B[47m";
 
+	public static CheckersPosition readCheckersPosition(Scanner sc) {
+		try {
+			String s = sc.nextLine();
+			char column = s.charAt(0);
+			int row = Integer.parseInt(s.substring(1));
+			return new CheckersPosition(column, row);
+		} catch (RuntimeException e) {
+			throw new InputMismatchException("Posicao invalida. Valores validos: a1 - h8");
+		}
+	}
+
 	public static void printBoard(CheckersPiece[][] pieces) {
 		for (int i = 0; i < pieces.length; i++) {
 			System.out.print((8 - i) + " ");
@@ -38,18 +53,16 @@ public class UserInterface {
 	}
 
 	private static void printPiece(CheckersPiece piece) {
-		
-    	if (piece == null) {
-            System.out.print(" - " );
-        }
-        else {
-            if (piece.getColor() == Color.WHITE) {
-                System.out.print(ANSI_WHITE + piece + ANSI_RESET);
-            }
-            else {
-                System.out.print(ANSI_YELLOW + piece + ANSI_RESET);
-            }
-        }
-        System.out.print(" ");
+
+		if (piece == null) {
+			System.out.print(" - ");
+		} else {
+			if (piece.getColor() == Color.WHITE) {
+				System.out.print(ANSI_WHITE + piece + ANSI_RESET);
+			} else {
+				System.out.print(ANSI_YELLOW + piece + ANSI_RESET);
+			}
+		}
+		System.out.print(" ");
 	}
 }
