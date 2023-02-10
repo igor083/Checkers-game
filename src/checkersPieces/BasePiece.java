@@ -19,6 +19,8 @@ public class BasePiece extends CheckersPiece {
 	public boolean[][] possibleMoves() {
 		boolean [][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()];
 		
+		
+		
 		return mat;
 	}
 	

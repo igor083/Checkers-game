@@ -26,6 +26,13 @@ public class CheckersMatch {
 		}
 		return mat;
 	}
+	
+	public boolean[][] possibleMoves(CheckersPosition sourcePosition){
+		Position position = sourcePosition.toPosition();
+		validateSourcePosition(position);
+		return board.piece(position).possibleMoves();
+	}
+	
 
 	private void placeNewPiece(char column, int row ,CheckersPiece cp) {
 		board.placePiece(cp, new CheckersPosition(column, row).toPosition());
