@@ -13,7 +13,7 @@ public class Main {
 	public static void main(String[] args) {
 		CheckersMatch match = new CheckersMatch();
 		Scanner sc = new Scanner(System.in);
-		while (true) {
+		while (!match.endGame()) {
 			try {
 				UserInterface.clearScreen();
 				UserInterface.printMatch(match);
@@ -42,5 +42,7 @@ public class Main {
 
 		}
 	}
+
+	
 
 }

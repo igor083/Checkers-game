@@ -1,6 +1,7 @@
 package checkersPieces;
 
 import boardgame.Board;
+import boardgame.Position;
 import checkers.CheckersPiece;
 import checkers.Color;
 
@@ -9,7 +10,7 @@ public class BasePiece extends CheckersPiece {
 	public BasePiece(Board board, Color color) {
 		super(board, color);
 	}
-	
+
 	@Override
 	public String toString() {
 		return " O ";
@@ -17,13 +18,52 @@ public class BasePiece extends CheckersPiece {
 
 	@Override
 	public boolean[][] possibleMoves() {
-		boolean [][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()];
-		
-		
-		
+		boolean[][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()];
+
+		Position p = new Position(0, 0);
+
+		if (this.getColor() == Color.WHITE) {// nw
+			p.setValues(position.getRow() - 1, position.getColumn() - 1);
+			if (getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {
+				mat[p.getRow()][p.getColumn()] = true;
+				p.setValues(p.getRow() - 1, p.getColumn() - 1);
+			}
+			if (getBoard().positionExists(p) && isThereEnemyPiece(p)) {
+				mat[p.getRow() - 1][p.getColumn() - 1] = true;
+			}
+
+			// ne
+			p.setValues(position.getRow() - 1, position.getColumn() + 1);
+			if (getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {
+				mat[p.getRow()][p.getColumn()] = true;
+				p.setValues(p.getRow() - 1, p.getColumn() + 1);
+			}
+			if (getBoard().positionExists(p) && isThereEnemyPiece(p)) {
+				mat[p.getRow() - 1][p.getColumn() + 1] = true;
+			}
+		}
+		if (this.getColor() == Color.BLACK) {// nw
+			p.setValues(position.getRow() + 1, position.getColumn() - 1);
+			if (getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {
+				mat[p.getRow()][p.getColumn()] = true;
+				p.setValues(p.getRow() + 1, p.getColumn() - 1);
+			}
+			if (getBoard().positionExists(p) && isThereEnemyPiece(p)) {
+				mat[p.getRow() + 1][p.getColumn() - 1] = true;
+			}
+			
+			// ne
+			p.setValues(position.getRow() + 1, position.getColumn() + 1);
+			if (getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {
+				mat[p.getRow()][p.getColumn()] = true;
+				p.setValues(p.getRow() + 1, p.getColumn() + 1);
+			}
+			if (getBoard().positionExists(p) && isThereEnemyPiece(p)) {
+				mat[p.getRow() + 1][p.getColumn() + 1] = true;
+			}
+		}
+
 		return mat;
 	}
-	
-	
-	
+
 }
