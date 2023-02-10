@@ -6,12 +6,28 @@ import boardgame.Position;
 import checkersPieces.BasePiece;
 
 public class CheckersMatch {
+	private int turn;
+	private Color currentPlayer;
+	public Color getCurrentPlayer() {
+		return currentPlayer;
+	}
+
+	public int getTurn() {
+		return turn;
+	}
 
 	private Board board;
 
 	public CheckersMatch() {
 		board = new Board(8, 8);// declara o tamanho do tabuleiro do jogo
+		turn=1;
+		currentPlayer = Color.WHITE;
 		initialSetup();
+	}
+	
+	public void nextTurn() {
+		turn++;
+		currentPlayer= (currentPlayer == Color.WHITE)? Color.BLACK:Color.WHITE;
 	}
 
 	public CheckersPiece[][] getPieces() {// matriz das pecas do jogo com relacao a partida
@@ -43,12 +59,16 @@ public class CheckersMatch {
 		Position target = targetPosition.toPosition();
 		validateSourcePosition(source);
 		Piece capturedPiece = makeMove(source,target);
+		nextTurn();
 		return (CheckersPiece)capturedPiece;
 	}
 	
 	private void validateSourcePosition(Position source) {
 		if(!board.thereIsAPiece(source)) {
 			throw new CheckersException("Nao existe peca na posicao de origem!");
+		}
+		if(currentPlayer!= ((CheckersPiece)board.piece(source)).getColor()) {
+			throw new CheckersException("A peca escolhida naon e  a sua!");
 		}
 		if(!board.piece(source).isThereAnyPossibleMove()) {
 			throw new CheckersException("Nenhum movimento possivel para esta peca");
