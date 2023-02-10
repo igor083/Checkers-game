@@ -25,7 +25,7 @@ public class CheckersMatch {
 		turn = 1;
 		currentPlayer = Color.WHITE;
 		initialSetup();
-		endGame();
+		
 	}
 
 	public void nextTurn() {
