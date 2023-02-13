@@ -25,7 +25,7 @@ public class CheckersMatch {
 		turn = 1;
 		currentPlayer = Color.WHITE;
 		initialSetup();
-		
+
 	}
 
 	public void nextTurn() {
@@ -112,7 +112,5 @@ public class CheckersMatch {
 		placeNewPiece('a', 2, new Queen(board, Color.WHITE));
 
 	}
-
-	
 
 }

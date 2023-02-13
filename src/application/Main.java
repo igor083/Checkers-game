@@ -13,18 +13,18 @@ public class Main {
 	public static void main(String[] args) {
 		CheckersMatch match = new CheckersMatch();
 		Scanner sc = new Scanner(System.in);
-		while (match.getTurn()<30) {
+		while (match.getTurn() < 30) {
 			try {
 				UserInterface.clearScreen();
 				UserInterface.printMatch(match);
 				System.out.println();
 				System.out.print("Source: ");
 				CheckersPosition source = UserInterface.readCheckersPosition(sc);
-				
+
 				boolean[][] possibleMoves = match.possibleMoves(source);
 				UserInterface.clearScreen();
-				UserInterface.printBoard(match.getPieces(),possibleMoves);
-				
+				UserInterface.printBoard(match.getPieces(), possibleMoves);
+
 				System.out.println();
 				System.out.print("Target: ");
 				CheckersPosition target = UserInterface.readCheckersPosition(sc);
@@ -42,7 +42,5 @@ public class Main {
 
 		}
 	}
-
-	
 
 }

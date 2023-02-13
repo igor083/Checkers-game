@@ -5,7 +5,7 @@ import boardgame.Position;
 import checkers.CheckersPiece;
 import checkers.Color;
 
-public class Queen extends CheckersPiece{
+public class Queen extends CheckersPiece {
 	public Queen(Board board, Color color) {
 		super(board, color);
 	}
@@ -14,13 +14,13 @@ public class Queen extends CheckersPiece{
 	public String toString() {
 		return " B ";
 	}
-	
+
 	@Override
 	public boolean[][] possibleMoves() {
 		boolean[][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()];
-		
+
 		Position p = new Position(0, 0);
-		
+
 		// nw
 		p.setValues(position.getRow() - 1, position.getColumn() - 1);
 		while (getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {
@@ -30,7 +30,7 @@ public class Queen extends CheckersPiece{
 		if (getBoard().positionExists(p) && isThereEnemyPiece(p)) {
 			mat[p.getRow()][p.getColumn()] = true;
 		}
-		
+
 		// ne
 		p.setValues(position.getRow() - 1, position.getColumn() + 1);
 		while (getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {
@@ -40,7 +40,7 @@ public class Queen extends CheckersPiece{
 		if (getBoard().positionExists(p) && isThereEnemyPiece(p)) {
 			mat[p.getRow()][p.getColumn()] = true;
 		}
-		
+
 		// se
 		p.setValues(position.getRow() + 1, position.getColumn() + 1);
 		while (getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {
@@ -50,7 +50,7 @@ public class Queen extends CheckersPiece{
 		if (getBoard().positionExists(p) && isThereEnemyPiece(p)) {
 			mat[p.getRow()][p.getColumn()] = true;
 		}
-		
+
 		// sw
 		p.setValues(position.getRow() + 1, position.getColumn() - 1);
 		while (getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {
@@ -60,6 +60,7 @@ public class Queen extends CheckersPiece{
 		if (getBoard().positionExists(p) && isThereEnemyPiece(p)) {
 			mat[p.getRow()][p.getColumn()] = true;
 		}
-		
+
 		return mat;
-	}}
+	}
+}

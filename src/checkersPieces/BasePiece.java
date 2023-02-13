@@ -51,7 +51,7 @@ public class BasePiece extends CheckersPiece {
 			if (getBoard().positionExists(p) && isThereEnemyPiece(p)) {
 				mat[p.getRow() + 1][p.getColumn() - 1] = true;
 			}
-			
+
 			// ne
 			p.setValues(position.getRow() + 1, position.getColumn() + 1);
 			if (getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {
